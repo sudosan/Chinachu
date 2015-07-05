@@ -68,8 +68,6 @@
 					break;
 				case 'webm':
 					d.f      = 'webm';
-					d['c:v'] = d['c:v'] || 'libvpx';
-					d['c:a'] = d['c:a'] || 'libvorbis';
 					break;
 			}
 			
@@ -110,6 +108,11 @@
 				args.push('-deadline', 'realtime');
 			}
 			
+			if (d['c:v'] === 'libvpx-vp9'){
+			if (d['c:v'] === 'libvpx-vp9')  args.push('-deadline', 'realtime');
+			if (d['c:v'] === 'libvpx-vp9')  args.push('-quality', 'realtime');
+			if (d['c:v'] === 'libvpx-vp9')  args.push('-tile-columns', '4');
+			}
 			if (d.f === 'mp4') {
 				args.push('-movflags', 'frag_keyframe+empty_moov+faststart');
 			}
