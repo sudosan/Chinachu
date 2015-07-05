@@ -224,7 +224,10 @@ P = Class.create(P, {
 							{
 								label     : 'VP8',
 								value     : 'libvpx',
-								isSelected: true
+							},
+							{
+								label     : 'VP9',
+								value     : 'libvpx-vp9',
 							}
 						]
 					},
@@ -289,6 +292,10 @@ P = Class.create(P, {
 								label     : 'Vorbis',
 								value     : 'libvorbis',
 								isSelected: set['c:a'] === 'libvorbis'
+							},
+							{
+								label     : 'Opus',
+								value     : 'libopus'
 							}
 						]
 					},
@@ -307,6 +314,10 @@ P = Class.create(P, {
 								label     : 'Vorbis',
 								value     : 'libvorbis',
 								isSelected: true
+							},
+							{
+								label     : 'Opus',
+								value     : 'libopus'
 							}
 						]
 					},
