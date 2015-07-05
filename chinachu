@@ -268,7 +268,7 @@ chinachu_installer_libvpx () {
     --enable-optimizations \
     --disable-examples \
     --disable-docs \
-    --disable-vp9 \
+    --enable-vp9 \
     --disable-unit-tests
   
   make || fail "couldn't make libvpx"
