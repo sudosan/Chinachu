@@ -62,8 +62,6 @@ Usushio では使わない
 					break;
 				case 'webm':
 					d.f      = 'webm';
-					d['c:v'] = d['c:v'] || 'libvpx';
-					d['c:a'] = d['c:a'] || 'libvorbis';
 					break;
 				case 'flv':
 					d.f      = 'flv';
@@ -107,7 +105,9 @@ Usushio では使わない
 			//if (format === 'flv')     { args.push('-vsync', '2'); }
 			if (d['c:v'] === 'libx264') args.push('-preset', 'ultrafast');
 			if (d['c:v'] === 'libvpx')  args.push('-deadline', 'realtime');
-			
+			if (d['c:v'] === 'libvpx-vp9')  args.push('-deadline', 'realtime');
+			if (d['c:v'] === 'libvpx-vp9')  args.push('-quality', 'realtime');
+			if (d['c:v'] === 'libvpx-vp9')  args.push('-tile-columns', '4');
 			args.push('-y', '-f', d.f, 'pipe:1');
 
 			// チューナーを選ぶ
